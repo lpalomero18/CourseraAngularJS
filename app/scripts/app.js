@@ -29,7 +29,7 @@ angular.module("confusionApp", [])
 			category: 'mains',
 			label: '',
 			price:'14.99',
-			description:'Delicious dish from valencian cuisine, saffron coloured rice with vegetables and meats. Incredibly tasty and healthy. A must try.',
+			description:'Delicious dish from valencian cuisine, saffron coloured rice with vegetables and meats. Incredibly tasty and healthy. A traditional must try.',
 			comment:'' 
 		}
 		]; 
