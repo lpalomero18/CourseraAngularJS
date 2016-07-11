@@ -92,7 +92,7 @@ gulp.task('browser-sync', ['default'], function () {
 
 // Tasks with git
 // Run git add with options 
-gulp.task('add', function(){
+gulp.task('publish', function(){
   return gulp.src('./{*,app/,app/styles/,app/scripts/}*.{js,json,css,html}')
-    .pipe(git.add()).pipe(git.commit('Minor change.'));
+    .pipe(git.add()).pipe(git.commit('Minor change.')).pipe(git.push());
 });
