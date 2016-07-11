@@ -73,21 +73,18 @@ gulp.task('watch', ['browser-sync'], function() {
 
 gulp.task('browser-sync', ['default'], function () {
     var files = [
-        'app/**/*.html',
-        'app/styles/**/*.css',
-        'app/images/**/*.png',
-        'app/scripts/**/*.js', 
-        'dist/**/*'
+        'app/**/*',
+        'app/styles/**.css',
+        'app/images/**.png',
+        'app/scripts/**.js'
     ];
 
     browserSync.init(files, {
       server: {
-            baseDir: "dist",
-            index: "menu.html"
         }
     });
         // Watch any files in dist/, reload on change
-    gulp.watch(['dist/**']).on('change', browserSync.reload);
+    gulp.watch(['app/**']).on('change', browserSync.reload);
 });
 
 // Tasks with git

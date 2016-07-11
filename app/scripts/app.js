@@ -46,4 +46,14 @@ angular.module("confusionApp", [])
 	$scope.isSelected=function(checkTab){
 		return ($scope.tab === checkTab);
 	};
-}]);
+}])
+
+	.controller('ContactController', ['$scope', function($scope){
+		$scope.feedback = {mychannel:"", firstName:"d", lastName:"", agree:false,email:""};
+	}])
+	.controller('FeedbackController', ['$scope', function($scope){
+//		$scope.sendFeedback = function()
+	}])
+
+;
+
