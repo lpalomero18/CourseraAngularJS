@@ -92,7 +92,15 @@ gulp.task('browser-sync', ['default'], function () {
 
 // Tasks with git
 // Run git add with options 
-gulp.task('publish', function(){
+gulp.task('git-add', function(){
   return gulp.src('./{*,app/,app/styles/,app/scripts/}*.{js,json,css,html}')
-    .pipe(git.add()).pipe(git.commit('Minor change.')).pipe(git.push());
+    .pipe(git.add());
+});
+gulp.task('git-commit',['git-add'], function(){
+  return gulp.src('./{*,app/,app/styles/,app/scripts/}*.{js,json,css,html}')
+    .pipe(git.commit('Minor change.'));
+});
+gulp.task('publish',['git-commit'], function(){
+  return gulp.src('./{*,app/,app/styles/,app/scripts/}*.{js,json,css,html}')
+    .pipe(git.push());
 });
